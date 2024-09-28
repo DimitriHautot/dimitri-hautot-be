@@ -1,0 +1,66 @@
+baseURL: 'http://hautot.be/'
+languageCode: 'fr-be'
+DefaultContentLanguage: 'fr'
+
+title: Et vice et versa
+#title: Billets d'humeur
+theme: 'ananke'
+resourceDir: '../resources'
+#omit_header_text: true
+
+SectionPagesMenu: "main"
+pagination:
+  pagerSize: 10
+enableRobotsTXT: true
+
+languages:
+  fr:
+    weight: 1
+    contentDir: 'content/fr'
+    params:
+      read_more_copy: En savoir plus
+  en:
+    weight: 2
+    contentDir: 'content/en'
+    params:
+      read_more_copy: Read more
+
+sitemap:
+  changefreq: 'weekly'
+  priority: 0.5
+  filename: 'sitemap.xml'
+
+params:
+  subtitle: 'Un peu de tout'
+#  text_color: ""
+  author: 'Dimitri Hautot'
+  favicon: 'dimitri-tee.png'
+  background_color_class: "bg-black"
+  recent_posts_number: 3
+  ananke_socials:
+    - name: twitter
+      label: (pro/tech/en)
+      url: "https://twitter.com/d_h_"
+    - name: twitter
+      label: (perso/life/fr)
+      url: "https://twitter.com/demitripp"
+    - name: github
+      url: https://github.com/DimitriHautot
+    - name: mastodon
+      url: https://mastodon.top/@demitrip
+      rel: me noopener
+    - name: Linkedin
+      color: blue
+      url: https://www.linkedin.com/in/dimitrihautot/
+    - name: stackoverflow
+      url: https://stackoverflow.com/users/967410/dimitri-hautot
+#    - name: bluesky.png
+#      label: Bluesky
+#      color: blue
+#      url: https://bsky.app/profile/dimitri.hautot.be
+#    - name: substack.svg
+#      label: Substack
+#      url: https://dimitrihautot.substack.com
+#    - name: strava
+#      label: STRAVA
+#      url: https://www.strava.com/athletes/115760180
