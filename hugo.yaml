@@ -1,4 +1,4 @@
-baseURL: 'http://hautot.be/'
+baseURL: 'https://hautot.be/'
 languageCode: 'fr-be'
 DefaultContentLanguage: 'fr'
 
@@ -38,12 +38,6 @@ params:
   background_color_class: "bg-black"
   recent_posts_number: 3
   ananke_socials:
-    - name: twitter
-      label: (pro/tech/en)
-      url: "https://twitter.com/d_h_"
-    - name: twitter
-      label: (perso/life/fr)
-      url: "https://twitter.com/demitripp"
     - name: github
       url: https://github.com/DimitriHautot
     - name: mastodon
