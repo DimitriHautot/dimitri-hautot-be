@@ -1,0 +1,110 @@
+baseURL = "https://hautot.be/"
+languageCode = "fr-be"
+DefaultContentLanguage = "fr"
+title = "Et vice et versa"
+theme = "gohugo-theme-ananke"
+resourceDir = "../resources"
+SectionPagesMenu = "main"
+enableRobotsTXT = true
+
+[pagination]
+pagerSize = 10
+
+[languages.fr]
+weight = 1
+contentDir = "content/fr"
+
+[languages.fr.params]
+read_more_copy = "En savoir plus"
+
+[languages.en]
+weight = 2
+contentDir = "content/en"
+
+[languages.en.params]
+read_more_copy = "Read more"
+
+[sitemap]
+changefreq = "weekly"
+priority = 0.5
+filename = "sitemap.xml"
+
+[params]
+subtitle = "Un peu de tout"
+author = "Dimitri Hautot"
+favicon = "dimitri-tee.png"
+background_color_class = "bg-black"
+recent_posts_number = 3
+
+[params.ananke.social.follow]
+new_window_icon = true
+networks = [
+    "linkedin",
+    "bluesky",
+    "mastodon",
+    "github",
+    "stackoverflow",
+    "rss",
+    "strava"
+]
+
+[params.ananke.social.linkedin]
+username = "dimitrihautot"
+slug = "linkedin"
+label = "LinkedIn"
+color = "#0077b5"
+profile = "https://linkedin.com/in/%s"
+icon = "linkedin"
+link = "https://www.linkedin.com/shareArticle"
+[params.ananke.social.networks.linkedin.particles]
+url = "permalink"
+title = "title"
+summary = "description"
+source = "permalink"
+params = "mini=true"
+
+[params.ananke.social.bluesky]
+slug = "bluesky"
+label = "Bluesky"
+color = "#1185fe"
+profilelink = "https://bsky.app/profile/dimitri.hautot.be"
+icon = "bluesky"
+link = "https://bsky.app/intent/compose"
+[params.ananke.social.networks.bluesky.particles]
+text = "permalink"
+
+[params.ananke.social.mastodon]
+profilelink = "https://mastodon.top/@demitrip"
+slug = "mastodon"
+label = "Mastodon"
+color = "#6364FF"
+icon = "mastodon"
+
+[params.ananke.social.github]
+slug = "github"
+label = "GitHub"
+color = "#6cc644"
+profilelink = "https://github.com/DimitriHautot"
+icon = "github"
+
+[params.ananke.social.stackoverflow]
+slug = "stackoverflow"
+label = "Stack Overflow"
+color = "#f48024"
+profilelink = "https://stackoverflow.com/users/967410/dimitri-hautot?tab=profile"
+icon = "stack-overflow"
+
+[params.ananke.social.rss]
+slug = "rss"
+label = "RSS"
+color = "#ff6f1a"
+profilelink = "/index.xml"
+icon = "rss"
+
+[params.ananke.social.strava]
+username = "115760180"
+[params.ananke.social.networks.strava]
+slug = "strava"
+label = "Strava"
+profile = "https://www.strava.com/athletes/%s"
+icon = "strava"
