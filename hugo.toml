@@ -1,4 +1,4 @@
-baseURL = "https://hautot.be/"
+baseURL = "/"
 languageCode = "fr-be"
 DefaultContentLanguage = "fr"
 title = "Et vice et versa"
