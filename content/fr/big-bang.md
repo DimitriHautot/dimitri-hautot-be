@@ -3,7 +3,7 @@ title = 'Donnons le ton'
 date = 2024-09-28T15:09:55+01:00
 draft = false
 featured_image = '/images/cover.jpg'
-#show_reading_time = true
+show_reading_time = true
 +++
 
 > ***Si tu n'as pas ton propre site web avant 50 ans, c'est que tu as raté ta vie.***
