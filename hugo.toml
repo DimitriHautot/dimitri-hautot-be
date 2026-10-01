@@ -1,10 +1,10 @@
 baseURL = "/"
-languageCode = "fr-be"
-DefaultContentLanguage = "fr"
+locale = "fr-be"
+defaultContentLanguage = "fr"
 title = "Et vice et versa"
 theme = "gohugo-theme-ananke"
 resourceDir = "../resources"
-SectionPagesMenu = "main"
+sectionPagesMenu = "main"
 enableRobotsTXT = true
 
 [pagination]
@@ -13,6 +13,7 @@ pagerSize = 10
 [languages.fr]
 weight = 1
 contentDir = "content/fr"
+locale = "fr-be"
 
 [languages.fr.params]
 read_more_copy = "En savoir plus"
@@ -20,6 +21,7 @@ read_more_copy = "En savoir plus"
 [languages.en]
 weight = 2
 contentDir = "content/en"
+locale = "en"
 
 [languages.en.params]
 read_more_copy = "Read more"
