@@ -6,6 +6,7 @@ theme = "gohugo-theme-ananke"
 resourceDir = "../resources"
 sectionPagesMenu = "main"
 enableRobotsTXT = true
+#ignoreLogs = ['warning-goldmark-raw-html']
 
 [pagination]
 pagerSize = 10
