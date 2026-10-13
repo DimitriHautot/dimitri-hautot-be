@@ -36,6 +36,10 @@ En Belgique 🇧🇪, sachez que les étiquettes collées sur la carte permetten
 - **plasma**: chiffres blancs sur fond noir
 - **plaquettes**: chiffres noirs sur fond orange
 
+### En cas d'erreur d'encodage
+
+Si vous faites une erreur d'encodage, vous pourrez la supprimer en activant le _mode debug_ dans le panneau de configuration, accessible en cliquant en haut à droite de l'écran, sur l'icône "hamburger". Ce mode vous permet également d'entrer vos dons passés plus vite.
+
 ## Points importants
 
 L’application a été développée par un donneur particulier pour se faciliter la tâche de prise de rendez-vous. Elle n’a été validée par aucune instance officielle. Elle s’applique dans un cadre “best effort”, sans garantie quelconque.
