@@ -7,6 +7,8 @@ draft = false
 BeBloody (”Soyez saignant !”) est une mini application web qui calcule les prochaines dates de dons possibles de sang, plasma et plaquettes en fonction de vos derniers dons.
 Le principe est simple: une fois un don effectué, vous l’ajoutez dans l’application, et elle vous indique les dates à partir desquelles les prochains seront possibles. Pratique pour prendre rendez-vous tant que vous êtes encore dans le centre de transfusion.
 
+C'est particulièrement utile pour les personnes qui font différents types de dons: jongler avec les dates limites devient vite fastidieux à calculer. C'est le problème que résout cette mini application web.
+
 {{< figure src="screenshot-main.png" alt="Interface BeBloody" width="300px" >}}
 
 ## En pratique
@@ -93,3 +95,11 @@ Merci pour votre lecture.
 &nbsp;
 
 {{< figure src="apple-touch-icon.png" alt="Logo BeBloody" height="80px" >}}
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+_Code QR généré par https://qr-code-generator.org/_
