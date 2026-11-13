@@ -67,3 +67,9 @@ a.img-zoom {
   max-height: 96vh;
   object-fit: contain;
 }
+
+/* Home header: frame the mountains (lower third of cover.jpg) instead of the sky */
+.bg-mountains {
+  background-repeat: no-repeat;
+  background-position: 50% 85%;
+}

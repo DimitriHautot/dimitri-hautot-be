@@ -37,6 +37,7 @@ subtitle = "Un peu de tout"
 author = "Dimitri Hautot"
 favicon = "dimitri-tee.png"
 background_color_class = "bg-black"
+featured_image_class = "cover bg-mountains"
 recent_posts_number = 3
 
 [params.ananke]
