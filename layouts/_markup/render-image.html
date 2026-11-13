@@ -1,0 +1,44 @@
+{{- /* Image render hook. Add "#zoom" to an image destination to make it open
+       enlarged in a lightbox on click, e.g. ![alt](schema.svg#zoom). */ -}}
+{{- $u := urls.Parse .Destination -}}
+{{- $zoom := eq $u.Fragment "zoom" -}}
+{{- $src := .Destination -}}
+{{- if not $u.IsAbs -}}
+  {{- with or (.PageInner.Resources.Get $u.Path) (resources.Get $u.Path) -}}
+    {{- $src = .RelPermalink -}}
+    {{- with $u.RawQuery }}{{ $src = printf "%s?%s" $src . }}{{ end -}}
+    {{- if and $u.Fragment (not $zoom) }}{{ $src = printf "%s#%s" $src $u.Fragment }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- if and $zoom (eq $src .Destination) -}}
+  {{- $src = strings.TrimSuffix "#zoom" $src -}}
+{{- end -}}
+{{- $img := printf `<img src="%s" alt="%s"%s>` $src (.PlainText | transform.HTMLEscape) (cond (ne .Title "") (printf ` title="%s"` (.Title | transform.HTMLEscape)) "") -}}
+{{- if $zoom -}}
+<a href="{{ $src }}" class="img-zoom" target="_blank" rel="noopener" title="Cliquer pour agrandir">{{ $img | safeHTML }}</a>
+  {{- if not (.Page.Store.Get "imgZoomScript") -}}
+    {{- .Page.Store.Set "imgZoomScript" true -}}
+<script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a.img-zoom');
+  if (!a || typeof HTMLDialogElement !== 'function') return;
+  e.preventDefault();
+  var d = document.getElementById('img-zoom-dialog');
+  if (!d) {
+    d = document.createElement('dialog');
+    d.id = 'img-zoom-dialog';
+    d.className = 'img-zoom-dialog';
+    d.addEventListener('click', function () { d.close(); });
+    document.body.appendChild(d);
+  }
+  var img = document.createElement('img');
+  img.src = a.href;
+  img.alt = a.querySelector('img').alt;
+  d.replaceChildren(img);
+  d.showModal();
+});
+</script>
+  {{- end -}}
+{{- else -}}
+{{ $img | safeHTML }}
+{{- end -}}

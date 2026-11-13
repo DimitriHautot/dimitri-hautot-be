@@ -39,6 +39,9 @@ favicon = "dimitri-tee.png"
 background_color_class = "bg-black"
 recent_posts_number = 3
 
+[params.ananke]
+custom_css = ["custom.css"]
+
 [params.ananke.social.follow]
 new_window_icon = true
 networks = [

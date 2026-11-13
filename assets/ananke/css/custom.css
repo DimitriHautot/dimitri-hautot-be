@@ -1,0 +1,69 @@
+/* Tables in article content (Ananke doesn't style them) */
+.nested-copy-line-height table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.nested-copy-line-height th,
+.nested-copy-line-height td {
+  border: 1px solid #ccc;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.nested-copy-line-height thead th {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.nested-copy-line-height tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.nested-copy-line-height tbody td:first-child {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 30em) {
+  .nested-copy-line-height table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* Slightly wider article pages (Ananke default: mw7 = 48rem) */
+main article.mw7 {
+  max-width: 56rem;
+}
+
+/* Click-to-zoom images (see layouts/_markup/render-image.html) */
+a.img-zoom {
+  cursor: zoom-in;
+}
+
+.img-zoom-dialog {
+  padding: 0;
+  border: none;
+  background: #fff;
+  max-width: 96vw;
+  max-height: 96vh;
+  cursor: zoom-out;
+}
+
+.img-zoom-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.img-zoom-dialog img {
+  display: block;
+  width: 96vw;
+  max-width: none;
+  height: auto;
+  max-height: 96vh;
+  object-fit: contain;
+}
