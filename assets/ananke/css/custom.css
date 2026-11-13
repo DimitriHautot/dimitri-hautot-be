@@ -73,3 +73,8 @@ a.img-zoom {
   background-repeat: no-repeat;
   background-position: 50% 85%;
 }
+
+/* Sans-serif titles: Ananke hardcodes the serif "athelas" class on headings */
+.athelas {
+  font-family: 'avenir next', avenir, sans-serif;
+}

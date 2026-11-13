@@ -38,6 +38,7 @@ author = "Dimitri Hautot"
 favicon = "dimitri-tee.png"
 background_color_class = "bg-black"
 featured_image_class = "cover bg-mountains"
+post_content_classes = "avenir"
 recent_posts_number = 3
 
 [params.ananke]
