@@ -2,6 +2,8 @@
 title = 'BeBloody - Donnez votre sang'
 date = 2026-10-01T21:37:00+02:00
 draft = false
+featured_image = '/be-bloody/apple-touch-icon.png'
+show_reading_time = true
 +++
 
 BeBloody (”Soyez saignant !”) est une mini application web qui calcule les prochaines dates de dons possibles de sang, plasma et plaquettes en fonction de vos derniers dons.

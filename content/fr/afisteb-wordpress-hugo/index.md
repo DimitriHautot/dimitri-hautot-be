@@ -2,6 +2,8 @@
 title = "Adieu WordPress : comment j'ai reconstruit afisteb.be en un mois, avec une IA"
 date = 2026-11-13T23:02:00+02:00
 draft = false
+featured_image = '/afisteb-wordpress-hugo/logo.png'
+show_reading_time = true
 +++
 
 # Adieu WordPress : comment j'ai reconstruit afisteb.be en un mois, avec une IA
