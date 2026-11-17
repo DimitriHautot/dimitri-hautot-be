@@ -1,0 +1,10 @@
+{{- /*
+  Remplace le partial du thème Ananke : même script de copie des blocs de code,
+  mais servi comme fichier externe (assets/js/code-copy.js) au lieu d'un
+  <script> inline, pour que la CSP puisse se passer de 'unsafe-inline'.
+*/ -}}
+{{- if ne false site.Params.ananke.copy_code -}}
+{{- with resources.Get "js/code-copy.js" | minify | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{- end }}
+{{- end -}}

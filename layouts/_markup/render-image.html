@@ -18,26 +18,9 @@
 <a href="{{ $src }}" class="img-zoom" target="_blank" rel="noopener" title="Cliquer pour agrandir">{{ $img | safeHTML }}</a>
   {{- if not (.Page.Store.Get "imgZoomScript") -}}
     {{- .Page.Store.Set "imgZoomScript" true -}}
-<script>
-document.addEventListener('click', function (e) {
-  var a = e.target.closest('a.img-zoom');
-  if (!a || typeof HTMLDialogElement !== 'function') return;
-  e.preventDefault();
-  var d = document.getElementById('img-zoom-dialog');
-  if (!d) {
-    d = document.createElement('dialog');
-    d.id = 'img-zoom-dialog';
-    d.className = 'img-zoom-dialog';
-    d.addEventListener('click', function () { d.close(); });
-    document.body.appendChild(d);
-  }
-  var img = document.createElement('img');
-  img.src = a.href;
-  img.alt = a.querySelector('img').alt;
-  d.replaceChildren(img);
-  d.showModal();
-});
-</script>
+{{- with resources.Get "js/img-zoom.js" | minify | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{- end }}
   {{- end -}}
 {{- else -}}
 {{ $img | safeHTML }}
