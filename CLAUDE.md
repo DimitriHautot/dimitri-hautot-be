@@ -49,6 +49,35 @@ Toujours surcharger, jamais éditer `themes/` :
 - **Paramètres** : beaucoup de classes Ananke se règlent dans `[params]` (`post_content_classes`, `featured_image_class`, `background_color_class`, `body_classes`…). Regarder dans `themes/gohugo-theme-ananke/layouts/` quel paramètre est lu avant d'écrire du CSS.
 - La police est Avenir (sans sérif) partout.
 
+## Mozilla Observatory
+
+Objectif : garder la note la plus haute possible sur https://developer.mozilla.org/en-US/observatory. Les en-têtes de sécurité sont définis dans `static/.htaccess`, que Hugo copie à la racine de `public/`. L'Observatory note chaque sous-domaine séparément : ce fichier ne vaut que pour blob.hautot.be.
+
+### Règles pour les templates et les articles
+
+- **Aucun JavaScript inline** : pas de `<script>` sans `src`, pas d'attribut `on…`, pas d'URL `javascript:`, ni dans les templates, ni dans le Markdown (HTML brut). La CSP (`script-src 'self'`) le bloquerait.
+- Un script va dans `assets/js/` et se charge avec empreinte et SRI, comme dans `layouts/_partials/site-scripts.html` :
+  ```go-html-template
+  {{- with resources.Get "js/xxx.js" | minify | fingerprint }}
+  <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+  {{- end }}
+  ```
+- Si un template surchargé du thème contient un `<script>` inline (le thème en a : `site-scripts.html`, `commento.html`…), sortir le script dans `assets/js/` au moment de la surcharge.
+- **Aucune ressource externe** : pas de CDN, Google Fonts, analytics, commentaires tiers (Commento, Disqus…), ni d'embed (shortcodes `youtube`, `vimeo`, `x`, `instagram`, `gist`, `<iframe>`). Mettre l'image dans le page bundle ; pour une vidéo, une capture avec un lien. Les liens `<a href>` vers d'autres sites ne sont pas concernés.
+- Les styles inline sont tolérés (`style-src 'unsafe-inline'`, non pénalisé ; le thème en génère), mais le CSS va de préférence dans `custom.css`.
+
+### Règles pour `static/.htaccess`
+
+- Ne jamais affaiblir la CSP pour « faire marcher » quelque chose : pas de `'unsafe-inline'` ou `'unsafe-eval'` dans `script-src`, pas de `*`, `https:` ou `data:` dans `script-src`/`default-src`.
+- Une source légitime nouvelle s'ajoute à la seule directive concernée (`img-src`, `frame-src`…), jamais à `default-src` ; une ressource externe inévitable se charge avec SRI.
+- Conserver : HSTS `max-age` ≥ 6 mois avec `includeSubDomains`, `nosniff`, `frame-ancestors 'none'` + `X-Frame-Options: DENY`, `Referrer-Policy`, `Permissions-Policy`, et le blocage des fichiers cachés (sauf `/.well-known/`).
+
+### Vérifier
+
+- `hugo --quiet -d "$(mktemp -d)"`, puis chercher les balises `<script>` sans `src` dans le HTML produit : aucune attendue.
+- Servir ce dossier avec la CSP de `static/.htaccess` et vérifier dans la console du navigateur qu'il n'y a aucune violation CSP (zoom d'image et bouton de copie des blocs de code compris).
+- Après déploiement : `curl -sI https://blob.hautot.be/`, puis relancer l'Observatory.
+
 ## Git
 
 - Messages de commit courts, en français de préférence. Nouvel article : `New content: "<slug>"`. Modification d'un article : `<slug> - <description>`.
