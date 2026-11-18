@@ -74,6 +74,17 @@ a.img-zoom {
   background-position: 50% 85%;
 }
 
+/* Links in text: Tachyons blue #357edd fails WCAG AA contrast (3.7 on #f4f4f4, 4.05 on white).
+   #2563c0 gives 5.3 on #f4f4f4 and 5.8 on white. */
+.nested-links a {
+  color: #2563c0;
+}
+
+.nested-links a:hover,
+.nested-links a:focus {
+  color: #00449e;
+}
+
 /* Sans-serif titles: Ananke hardcodes the serif "athelas" class on headings */
 .athelas {
   font-family: 'avenir next', avenir, sans-serif;
