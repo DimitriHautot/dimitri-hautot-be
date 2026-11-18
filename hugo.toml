@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://blob.hautot.be/"
 locale = "fr-be"
 defaultContentLanguage = "fr"
 title = "Et vice et versa"
@@ -18,6 +18,7 @@ locale = "fr-be"
 
 [languages.fr.params]
 read_more_copy = "En savoir plus"
+description = "Les pensées aléatoires et non volatiles d'un informaticien, papa, époux, citoyen belge, ... et vice et versa"
 
 [languages.en]
 weight = 2
